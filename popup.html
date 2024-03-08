@@ -7,43 +7,45 @@
         <link rel="stylesheet" href="style.css" />
     </head>
     <body>
-        <h1>Story Point Estimator</h1>
-        <div id="input-container">
-            <div>
-                <label for="knowledge">Task Knowledge:</label>
-                <select id="knowledge">
-                    <option value="everything">Everything</option>
-                    <option value="almost-everything">Almost Everything</option>
-                    <option value="something">Something</option>
-                    <option value="almost-nothing">Almost Nothing</option>
-                    <option value="nothing">Nothing</option>
-                    <option value="unknown">Unknown</option>
-                </select>
+        <main class="container">
+            <div id="inputs">
+                <h2>Story Point Estimator</h2>
+                <div>
+                    <label for="knowledge">Task Knowledge:</label>
+                    <select id="knowledge">
+                        <option value="everything">Everything</option>
+                        <option value="almost-everything">Almost Everything</option>
+                        <option value="something">Something</option>
+                        <option value="almost-nothing">Almost Nothing</option>
+                        <option value="nothing">Nothing</option>
+                        <option value="unknown">Unknown</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="dependencies">Dependencies:</label>
+                    <select id="dependencies">
+                        <option value="none">None</option>
+                        <option value="almost-none">Almost None</option>
+                        <option value="some">Some</option>
+                        <option value="few">Few</option>
+                        <option value="more-than-few">More Than Few</option>
+                        <option value="unknown">Unknown</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="effort">Work Effort:</label>
+                    <select id="effort">
+                        <option value="minimal">Minimal</option>
+                        <option value="low">Low</option>
+                        <option value="moderate">Moderate</option>
+                        <option value="high">High</option>
+                        <option value="very-high">Very High</option>
+                        <option value="unknown">Unknown</option>
+                    </select>
+                </div>
+                <button class="primary-btn">Calculate Point</button>
             </div>
-            <div>
-                <label for="dependencies">Dependencies:</label>
-                <select id="dependencies">
-                    <option value="none">None</option>
-                    <option value="almost-none">Almost None</option>
-                    <option value="some">Some</option>
-                    <option value="few">Few</option>
-                    <option value="more-than-few">More Than Few</option>
-                    <option value="unknown">Unknown</option>
-                </select>
-            </div>
-            <div>
-                <label for="effort">Work Effort:</label>
-                <select id="effort">
-                    <option value="minimal">Minimal</option>
-                    <option value="low">Low</option>
-                    <option value="moderate">Moderate</option>
-                    <option value="high">High</option>
-                    <option value="very-high">Very High</option>
-                    <option value="unknown">Unknown</option>
-                </select>
-            </div>
-        </div>
-        <button id="calculate-button">Calculate Story Points</button>
-        <p id="result"></p>
+            <div id="result"></div>
+        </main>
     </body>
 </html>
