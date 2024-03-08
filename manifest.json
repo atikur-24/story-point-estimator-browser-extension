@@ -3,7 +3,16 @@
     "description": "Estimates story points based on user input",
     "version": "1.0",
     "manifest_version": 3,
+    "permissions": ["storage"],
     "action": {
         "default_popup": "popup.html"
+    },
+    "background": {
+        "service_worker": "background.js"
+    },
+    "icons": {
+        "16": "./images/story.png",
+        "32": "./images/story.png",
+        "48": "./images/story.png"
     }
 }
