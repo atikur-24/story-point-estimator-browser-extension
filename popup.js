@@ -1,7 +1,13 @@
-// store story estimation data
+// for globally handling stores data
 let storiesData = [];
 
-// store stories data from browser DB
+// get all story estimation data and show ui
+chrome.storage.local.get({ storiesData: [] }).then((result) => {
+    storiesData = result.storiesData;
+    displayStoriesData();
+});
+
+// story estimation data saved to chrome extension storage
 const saveStoresData = () => {
     chrome.storage.local.set({ storiesData }).then(() => {
         alert("Data Saved Successfully!");
@@ -17,7 +23,12 @@ const addStory = (knowledge, dependencies, effort) => {
     };
     storiesData.push(stories);
     saveStoresData();
+    displayStoriesData();
 };
+
+function displayStoriesData() {
+    console.log("hello");
+}
 
 // get story estimation data form select option field
 document.getElementById("addStoryPointBtn").addEventListener("click", (event) => {
