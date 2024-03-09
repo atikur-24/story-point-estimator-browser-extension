@@ -8,11 +8,12 @@
     </head>
     <body>
         <main class="container">
-            <div id="inputs">
+            <form id="form-container">
                 <h2>Story Point Estimator</h2>
                 <div>
                     <label for="knowledge">Task Knowledge:</label>
-                    <select id="knowledge">
+                    <select id="knowledge" required>
+                        <option value="" disabled selected>Select Task Knowledge</option>
                         <option value="everything">Everything</option>
                         <option value="almost-everything">Almost Everything</option>
                         <option value="something">Something</option>
@@ -23,7 +24,8 @@
                 </div>
                 <div>
                     <label for="dependencies">Dependencies:</label>
-                    <select id="dependencies">
+                    <select id="dependencies" required>
+                        <option value="" disabled selected>Select Dependencies</option>
                         <option value="none">None</option>
                         <option value="almost-none">Almost None</option>
                         <option value="some">Some</option>
@@ -34,7 +36,8 @@
                 </div>
                 <div>
                     <label for="effort">Work Effort:</label>
-                    <select id="effort">
+                    <select id="effort" required>
+                        <option value="" disabled selected>Select Work Effort</option>
                         <option value="minimal">Minimal</option>
                         <option value="low">Low</option>
                         <option value="moderate">Moderate</option>
@@ -43,9 +46,10 @@
                         <option value="unknown">Unknown</option>
                     </select>
                 </div>
-                <button class="primary-btn">Calculate Point</button>
-            </div>
+                <button id="addStoryPointBtn" class="primary-btn">Calculate Point</button>
+            </form>
             <div id="result"></div>
         </main>
+        <script src="/popup.js"></script>
     </body>
 </html>

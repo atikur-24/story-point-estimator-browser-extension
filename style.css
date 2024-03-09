@@ -6,7 +6,6 @@
     --secondary: #333;
     --white: #fff;
     --deep-blue: #005da0;
-    --gray-400: #99a3b0;
     --light-gray: #d1d5db;
 }
 
@@ -19,28 +18,27 @@
 body {
     font-family: "Inter", sans-serif;
     color: var(--secondary);
-    /* line-height: 1.5; */
-    /* height: 97vh; */
-    position: relative;
-    align-items: flex-start;
-    justify-content: center;
+    height: 97vh;
 }
 
-/* here apply for the common styles */
+/* here container and sub container styles  */
 .container {
     display: flex;
     justify-content: space-between;
     gap: 50px;
     width: auto;
     padding: 30px;
+    width: 800px;
+    height: 430px;
 }
 
 #result {
-    width: 700px;
-    height: 330px;
+    /* width: 700px; */
+    /* height: 330px; */
     overflow: auto;
 }
 
+/* here apply for the common styles */
 .primary-btn {
     margin-top: 20px;
     background-color: var(--primary);
@@ -67,12 +65,18 @@ label {
     font-weight: 600;
     padding: 14px 0 6px 0;
 }
+
 select {
     font-size: 15px;
     padding: 6px 4px;
     border-radius: 4px;
-    border-color: var(--light-gray);
-    /* outline-style: solid; */
-    /* outline-width: 1px; */
-    /* outline-color: #4b5563; */
+    border: 0;
+    outline-style: solid;
+    outline-width: 1px;
+    outline-color: var(--light-gray);
+    width: 100%;
+}
+
+select:focus {
+    outline-color: var(--primary);
 }
