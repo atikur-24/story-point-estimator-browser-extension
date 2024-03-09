@@ -1,6 +1,12 @@
 // store story estimation data
 let storiesData = [];
-console.log(storyData);
+
+// store stories data from browser DB
+const saveStoresData = () => {
+    chrome.storage.local.set({ storiesData }).then(() => {
+        alert("Data Saved Successfully!");
+    });
+};
 
 // add story estimation handler
 const addStory = (knowledge, dependencies, effort) => {
@@ -13,15 +19,12 @@ const addStory = (knowledge, dependencies, effort) => {
     saveStoresData();
 };
 
-console.log(storyData);
-
-// get story estimation
+// get story estimation data form select option field
 document.getElementById("addStoryPointBtn").addEventListener("click", (event) => {
     const knowledge = document.getElementById("knowledge").value;
     const dependencies = document.getElementById("dependencies").value;
     const effort = document.getElementById("effort").value;
-
-    // event.stopImmediatePropagation();
+    // check validation
     if (knowledge && dependencies && effort) {
         event.preventDefault();
         addStory(knowledge, dependencies, effort);
