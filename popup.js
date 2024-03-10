@@ -35,15 +35,17 @@ const addStory = (knowledge, dependencies, effort) => {
 function displayStoriesData() {
     const resultGrid = document.getElementById("resultGrid");
     resultGrid.innerHTML = "";
+    // replace hyphen to space
+    const regex = /-/gi;
 
     storiesData.forEach((story) => {
         let highestPoint = Math.max(knowledgeMatrix[story.knowledge], dependenciesMatrix[story.dependencies], effortMatrix[story.effort]);
 
         const storyCard = document.createElement("div");
         storyCard.innerHTML = `
-        <p>Task Knowledge: <span>${story.knowledge}</span></p>
-        <p>Dependencies: <span>${story.dependencies}</span></p>
-        <p>Work Effort: <span>${story.effort}</span></p>
+        <p>Task Knowledge: <span>${story.knowledge.replace(regex, " ")}</span></p>
+        <p>Dependencies: <span>${story.dependencies.replace(regex, " ")}</span></p>
+        <p>Work Effort: <span>${story.effort.replace(regex, " ")}</span></p>
         <p class="point">Result: <span>${highestPoint}</span></p>
         `;
 
