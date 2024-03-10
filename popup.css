@@ -40,7 +40,7 @@ body {
 
 /* here apply for the common styles */
 .primary-btn {
-    margin-top: 20px;
+    margin-top: 30px;
     background-color: var(--primary);
     color: var(--white);
     border: none;
@@ -79,4 +79,39 @@ select {
 
 select:focus {
     outline-color: var(--primary);
+}
+
+/* result grid view in card */
+#resultGrid {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+#resultGrid > div {
+    border: 1px solid var(--deep-blue);
+    border-radius: 4px;
+    padding: 5px;
+    font-size: 14px;
+    /* background: var(--light-gray); */
+}
+
+#resultGrid > div p {
+    text-transform: capitalize;
+    padding: 2px 0;
+    font-weight: 500;
+}
+
+#resultGrid > div span {
+    font-weight: normal;
+}
+
+#resultGrid .point {
+    color: var(--deep-blue);
+    font-weight: 600;
+}
+
+#resultGrid .point > span {
+    font-weight: 600;
 }
