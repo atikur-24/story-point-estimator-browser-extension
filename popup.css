@@ -7,6 +7,7 @@
     --white: #fff;
     --deep-blue: #005da0;
     --light-gray: #d1d5db;
+    --background: #f1f5f9;
 }
 
 * {
@@ -17,11 +18,12 @@
 
 body {
     font-family: "Inter", sans-serif;
-    color: var(--secondary);
     height: 97vh;
+    color: var(--secondary);
+    background: var(--background);
 }
 
-/* here container and sub container styles  */
+/* here container and sub container styles */
 .container {
     display: flex;
     justify-content: space-between;
@@ -32,13 +34,13 @@ body {
     height: 430px;
 }
 
-#result {
+#result-container {
     /* width: 700px; */
     /* height: 330px; */
     overflow: auto;
 }
 
-/* here apply for the common styles */
+/* here apply for the common part styles */
 .primary-btn {
     margin-top: 30px;
     background-color: var(--primary);
@@ -58,7 +60,11 @@ body {
     background-color: var(--deep-blue);
 }
 
-/* style for input field (dropdown) */
+.title {
+    text-transform: uppercase;
+}
+
+/* style for select field (dropdown) */
 label {
     font-size: 16px;
     display: block;
@@ -81,7 +87,7 @@ select:focus {
     outline-color: var(--primary);
 }
 
-/* result grid view in card */
+/* style for the result grid view (card) */
 #resultGrid {
     display: grid;
     grid-template-columns: auto auto;
@@ -94,6 +100,7 @@ select:focus {
     border-radius: 4px;
     padding: 5px;
     font-size: 14px;
+    background: var(--white);
     /* background: var(--light-gray); */
 }
 
