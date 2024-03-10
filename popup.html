@@ -11,7 +11,7 @@
         <main class="container">
             <!-- form container -->
             <form id="form-container">
-                <h2 class="title">Story Point Estimator</h2>
+                <h2 class="title">Set Story</h2>
                 <div>
                     <label for="knowledge">Task Knowledge:</label>
                     <select id="knowledge" required>
@@ -53,6 +53,13 @@
             <!-- result container -->
             <div id="result-container">
                 <h2 class="title">Calculation Part</h2>
+                <div id="emptyMessage">
+                    <img src="/images/empty-folder.png" alt="empty" />
+                    <div>
+                        <h3>Empty Story Data</h3>
+                        <p>Add your story estimation data</p>
+                    </div>
+                </div>
                 <div id="resultGrid"></div>
             </div>
         </main>

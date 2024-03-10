@@ -1,22 +1,27 @@
 // for globally handling stores data
 let storiesData = [];
 
-// here is the story point matrix
+// here is the story estimation point matrix value
 let knowledgeMatrix = { everything: 1, "almost-everything": 2, something: 3, "almost-nothing": 5, nothing: 8, unknown: 13 };
 let dependenciesMatrix = { none: 1, "almost-none": 2, some: 3, few: 5, "more-than-few": 8, unknown: 13 };
 let effortMatrix = { minimal: 1, low: 2, moderate: 3, high: 5, "very-high": 8, unknown: 13 };
 
+// get empty container
+const emptyMessage = document.getElementById("emptyMessage");
+
 // get all story estimation data and show ui
 chrome.storage.local.get({ storiesData: [] }).then((result) => {
     storiesData = result.storiesData;
-    displayStoriesData();
+    if (storiesData.length === 0) {
+        emptyMessage.style.display = "flex";
+    } else {
+        displayStoriesData();
+    }
 });
 
 // story estimation data saved to chrome extension storage
-const saveStoresData = () => {
-    chrome.storage.local.set({ storiesData }).then(() => {
-        // alert("Data Saved Successfully!");
-    });
+const saveStoriesData = () => {
+    chrome.storage.local.set({ storiesData }).then(() => {});
 };
 
 // add story estimation handler
@@ -27,19 +32,20 @@ const addStory = (knowledge, dependencies, effort) => {
         effort,
     };
     storiesData.push(stories);
-    saveStoresData();
+    saveStoriesData();
     displayStoriesData();
 };
 
 // show all story estimation data
 function displayStoriesData() {
+    emptyMessage.style.display = "none";
     const resultGrid = document.getElementById("resultGrid");
     resultGrid.innerHTML = "";
-    // replace hyphen to space
     const regex = /-/gi;
 
     storiesData.forEach((story) => {
-        let highestPoint = Math.max(knowledgeMatrix[story.knowledge], dependenciesMatrix[story.dependencies], effortMatrix[story.effort]);
+        // calculate the highest point of story estimation data
+        const highestPoint = Math.max(knowledgeMatrix[story.knowledge], dependenciesMatrix[story.dependencies], effortMatrix[story.effort]);
 
         const storyCard = document.createElement("div");
         storyCard.innerHTML = `
