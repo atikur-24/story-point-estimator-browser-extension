@@ -1,5 +1,6 @@
 /* google font inter */
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"); */
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap");
 
 :root {
     --primary: #0077cc;
@@ -17,10 +18,12 @@
 }
 
 body {
-    font-family: "Inter", sans-serif;
+    /* font-family: "Inter", sans-serif; */
+    font-family: "Plus Jakarta Sans", sans-serif;
     height: 97vh;
     color: var(--secondary);
     background: var(--background);
+    width: 100%;
 }
 
 /* here container and sub container styles */
@@ -34,6 +37,7 @@ body {
 }
 
 #result-container {
+    padding: 5px;
     /* width: 700px; */
     /* height: 330px; */
     overflow: auto;
@@ -54,6 +58,7 @@ body {
     transition-property: background-color;
     transition-timing-function: linear;
     transition-duration: 200ms;
+    width: 100%;
 }
 .primary-btn:hover {
     background-color: var(--deep-blue);
@@ -91,16 +96,17 @@ select:focus {
 #resultGrid {
     display: grid;
     grid-template-columns: auto auto;
-    gap: 10px;
+    gap: 16px;
     margin-top: 20px;
 }
 
 #resultGrid > div {
-    border: 1px solid var(--deep-blue);
+    /* border: 1px solid var(--primary); */
     border-radius: 4px;
-    padding: 5px;
+    padding: 6px;
     font-size: 14px;
     background: var(--white);
+    box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;
 }
 
 #resultGrid > div p {
@@ -114,7 +120,7 @@ select:focus {
 }
 
 #resultGrid .point {
-    color: var(--deep-blue);
+    color: var(--primary);
     font-weight: 600;
 }
 
