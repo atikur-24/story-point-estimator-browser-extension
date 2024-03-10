@@ -1,8 +1,10 @@
 // for globally handling stores data
 let storiesData = [];
-let knowledgePoint = { everything: 1, "almost-everything": 2, something: 3, "almost-nothing": 5, nothing: 8, unknown: 13 };
-let dependencies = { none: 1, "almost-none": 2, some: 3, few: 5, "more-than-few": 8, unknown: 13 };
-let effort = { minimal: 1, low: 2, moderate: 3, high: 5, "very-high": 8, unknown: 13 };
+
+// here is the story point matrix
+let knowledgeMatrix = { everything: 1, "almost-everything": 2, something: 3, "almost-nothing": 5, nothing: 8, unknown: 13 };
+let dependenciesMatrix = { none: 1, "almost-none": 2, some: 3, few: 5, "more-than-few": 8, unknown: 13 };
+let effortMatrix = { minimal: 1, low: 2, moderate: 3, high: 5, "very-high": 8, unknown: 13 };
 
 // get all story estimation data and show ui
 chrome.storage.local.get({ storiesData: [] }).then((result) => {
@@ -32,17 +34,20 @@ const addStory = (knowledge, dependencies, effort) => {
 // show all story estimation data
 function displayStoriesData() {
     const resultGrid = document.getElementById("resultGrid");
+    resultGrid.innerHTML = "";
 
     storiesData.forEach((story) => {
-        let max = Math.max(knowledgePoint[story.knowledge], dependencies[story.dependencies], effort[story.effort]);
-        const cardDiv = document.createElement("div");
-        cardDiv.innerHTML = `
+        let highestPoint = Math.max(knowledgeMatrix[story.knowledge], dependenciesMatrix[story.dependencies], effortMatrix[story.effort]);
+
+        const storyCard = document.createElement("div");
+        storyCard.innerHTML = `
         <p>Task Knowledge: <span>${story.knowledge}</span></p>
         <p>Dependencies: <span>${story.dependencies}</span></p>
         <p>Work Effort: <span>${story.effort}</span></p>
-        <p class="point">Result: <span>${max}</span></p>
+        <p class="point">Result: <span>${highestPoint}</span></p>
         `;
-        resultGrid.appendChild(cardDiv);
+
+        resultGrid.appendChild(storyCard);
     });
 }
 
@@ -56,6 +61,7 @@ document.getElementById("addStoryPointBtn").addEventListener("click", (event) =>
     if (knowledge && dependencies && effort) {
         event.preventDefault();
         addStory(knowledge, dependencies, effort);
+
         // reset selected options
         const selects = document.querySelectorAll("select");
         selects.forEach((select) => {
