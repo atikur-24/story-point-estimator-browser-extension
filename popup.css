@@ -1,14 +1,13 @@
-/* google font inter */
-/* @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"); */
+/* google font */
 @import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap");
 
 :root {
     --primary: #0077cc;
-    --secondary: #333;
-    --white: #fff;
     --deep-blue: #005da0;
-    --light-gray: #d1d5db;
+    --secondary: #1f2937;
+    --white: #fff;
     --background: #f1f5f9;
+    --light-gray: #d1d5db;
 }
 
 * {
@@ -18,7 +17,6 @@
 }
 
 body {
-    /* font-family: "Inter", sans-serif; */
     font-family: "Plus Jakarta Sans", sans-serif;
     height: 97vh;
     color: var(--secondary);
@@ -37,7 +35,6 @@ body {
 }
 
 #result-container {
-    padding: 5px;
     /* width: 700px; */
     /* height: 330px; */
     overflow: auto;
@@ -98,6 +95,7 @@ select:focus {
     grid-template-columns: auto auto;
     gap: 16px;
     margin-top: 20px;
+    padding: 5px;
 }
 
 #resultGrid > div {
@@ -116,7 +114,7 @@ select:focus {
 }
 
 #resultGrid > div span {
-    font-weight: normal;
+    font-weight: 400;
 }
 
 #resultGrid .point {
