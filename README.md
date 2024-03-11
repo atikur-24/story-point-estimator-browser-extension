@@ -10,11 +10,10 @@ Step - 5: `Click Load unpacked button`
 Step - 6: `Select the folder (story-point-chrome-extension)`
 
 ![Step](/images/ss-1.jpg)
+![Step](/images/ss-2.jpg)
+![Step](/images/ss-3.jpg)
 
-<div class="image-container">
-    <img src="/images/ss-2.jpg" alt="Step">
-    <img src="/images/ss-3.jpg" alt="Step">
-</div>
+<hr />
 
 ### Final view in this extension
 
