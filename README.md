@@ -13,9 +13,13 @@
 ![Step](/images/ss-2.jpg) ![Step](/images/ss-3.jpg)
 ![Step](/images/ss-4.png)
 
-### Extension Features and Design
+### Extension Features and design
 
--   Estimates story points based on user input
+-   Estimates story points based on user input.
+-   User-friendly and responsive design for a seamless experience.
+-   Accurate calculation of story points using a predefined matrix, ensuring reliability in estimates.
+-   View the estimated story points along with task details in a clear and organized grid.
+-   Save and access a history of story estimations for future reference.
 
 ### Used Technologies
 
