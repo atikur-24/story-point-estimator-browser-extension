@@ -7,7 +7,7 @@ let effortMatrix = { minimal: 1, low: 2, moderate: 3, high: 5, "very-high": 8, u
 let storiesData = [];
 
 // get empty container
-const emptyMessage = document.getElementById("emptyMessage");
+const emptyMessage = document.getElementById("empty-message");
 
 // get all story estimation data and show ui
 chrome.storage.local.get({ storiesData: [] }).then((result) => {
@@ -60,7 +60,7 @@ function displayStoriesData() {
 }
 
 // get story estimation data form select option field
-document.getElementById("addStoryPointBtn").addEventListener("click", (event) => {
+document.getElementById("calculate-btn").addEventListener("click", (event) => {
     const knowledge = document.getElementById("knowledge").value;
     const dependencies = document.getElementById("dependencies").value;
     const effort = document.getElementById("effort").value;

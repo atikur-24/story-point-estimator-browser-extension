@@ -130,13 +130,13 @@ select:focus {
 }
 
 /* style for empty message */
-#emptyMessage {
+#empty-message {
     margin-top: 20px;
     align-items: center;
     gap: 10px;
 }
 
-#emptyMessage p {
+#empty-message p {
     padding-top: 8px;
     font-size: 13px;
 }
